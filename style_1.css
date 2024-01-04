@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#webmap {
+  width: 100vw;
+  height: 100vh;
+}
+
+.section{
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#floating-buttons {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  background-color: rgba(206, 242, 247, 0.712);
+  padding: 20px;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+}
+
+.button{
+  width: 10%;
+}
+
+

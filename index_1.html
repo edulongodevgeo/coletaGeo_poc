@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="PTBR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seu Webmap</title>
+    <!-- Adicione a folha de estilo do Bulma CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <!-- Adicione a biblioteca do FontAwesome -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></script>
+    <link href="style_1.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+    <div id="webmap" class="section">
+        <object data="webmap.html" width="100%" height="100%" type="text/html"></object>
+    </div>
+
+    <!-- Botões flutuantes para dispositivos móveis -->
+    <div id="floating-buttons" class="fixed-bottom">
+        <!-- Utilize as classes do Bulma para estilizar os botões -->
+        <button onclick="openFormPage()" class="button is-primary is-rounded">
+            <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14"
+                    viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                    <path
+                        d="M246.6 9.4c-12.5-12.5-32.8-12.5-45.3 0l-128 128c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 109.3V320c0 17.7 14.3 32 32 32s32-14.3 32-32V109.3l73.4 73.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-128-128zM64 352c0-17.7-14.3-32-32-32s-32 14.3-32 32v64c0 53 43 96 96 96H352c53 0 96-43 96-96V352c0-17.7-14.3-32-32-32s-32 14.3-32 32v64c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V352z" />
+                </svg>
+            </span>
+        </button>
+        <button onclick="openListPage()" class="button is-info is-rounded">
+            <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16"
+                    viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                    <path
+                        d="M40 48C26.7 48 16 58.7 16 72v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V72c0-13.3-10.7-24-24-24H40zM192 64c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zM16 232v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V232c0-13.3-10.7-24-24-24H40c-13.3 0-24 10.7-24 24zM40 368c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V392c0-13.3-10.7-24-24-24H40z" />
+                </svg> </span>
+        </button>
+    </div>
+
+
+    <!-- Adicione os scripts do Bulma -->
+    <script defer src="https://cdn.jsdelivr.net/npm/bulma@0.9.4"></script>
+
+    <script>
+        // Funções para abrir as novas páginas
+        function openFormPage() {
+            window.location.href = "form.html";
+        }
+
+        function openListPage() {
+            window.location.href = "lista.html";
+        }
+    </script>
+
+</body>
+
+</html>

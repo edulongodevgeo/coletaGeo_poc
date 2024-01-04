@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Praias</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+    <!-- Adicione este botão ao seu HTML -->
+<button id="closeButton" class="button is-danger is-rounded">
+    <span class="icon">
+        <svg xmlns="http://www.w3.org/2000/svg" height="16" width="12" viewBox="0 0 384 512">
+            <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/>
+        </svg>
+    </span>
+</button>
+
+<!-- Adicione este script ao seu HTML para lidar com o clique no botão -->
+<script>
+    document.getElementById('closeButton').addEventListener('click', function() {
+        window.location.href = 'index_1.html';
+    });
+</script>
+
+
+    <div class="container mt-5">
+    <h2 class="mb-4">Lista de Praias</h2>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Status</th>
+                <!-- <th scope="col">Latitude</th>
+                <th scope="col">Longitude</th> -->
+            </tr>
+        </thead>
+        <tbody id="praiaTableBody">
+            <!-- Os dados da tabela serão inseridos aqui com JavaScript -->
+        </tbody>
+    </table>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
+
+<script>
+    // Função para buscar e exibir os dados da API REST
+    function loadPraias() {
+        fetch('https://script.google.com/macros/s/AKfycbwrYRpu_McGah6-NaSf06lLEB1iMA1sJt7fw-aSSbn3aHmgw3ConxLrhp1yDvTmXA0j/exec?action=getAll')
+            .then(response => response.json())
+            .then(data => {
+                // Limpar o conteúdo atual da tabela
+                document.getElementById('praiaTableBody').innerHTML = '';
+
+                // Iterar sobre os dados e adicionar linhas à tabela
+                data.forEach(praia => {
+                    const row = `<tr>
+                                    <td>${praia.Nome}</td>
+                                    <td>${praia.Tipo}</td>
+                                    <td>${praia.Status}</td>
+                                    <!-- <td>${praia.Latitude}</td> -->
+                                    <!-- <td>${praia.Longitude}</td> -->
+                                </tr>`;
+                    document.getElementById('praiaTableBody').innerHTML += row;
+                });
+            })
+            .catch(error => console.error('Erro ao carregar dados da API', error));
+    }
+
+    // Carregar dados quando a página é carregada
+    document.addEventListener('DOMContentLoaded', loadPraias);
+</script>
+
+</body>
+</html>
